@@ -18,7 +18,6 @@ for i in (0..k.length)
   moins6k += ["#{k[i]}"]
  end
 end
-moinscouteuses = Hash[moins6k.zip(moins6kprix.map)]
 puts "cryptos les plus couteuses #{Hash[cp.sort_by{|k, i| -i}[0..3]]}"
 puts "cryptos les moins couteuses #{Hash[cp.sort_by{|k, i| i}[0..3]]}"
 puts "nombre de cryptos avec coin dans leur nom #{kcoin}"
