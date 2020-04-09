@@ -8,7 +8,6 @@ v = v.map{|i| i.delete("$").to_f}
 cp = Hash[k.zip(v.map)]
 kcoin = 0
 moins6k = []
-moins6kprix = []
 for i in (0..k.length)
  if (/coin/.match("#{k[i]}"))
   kcoin += 1
@@ -17,7 +16,6 @@ end
 for i in (0..k.length)
  if (v[i].to_i <= 6000)
   moins6k += ["#{k[i]}"]
-  moins6kprix += ["#{v[i]}"]
  end
 end
 moinscouteuses = Hash[moins6k.zip(moins6kprix.map)]
@@ -25,4 +23,5 @@ puts "cryptos les plus couteuses #{Hash[cp.sort_by{|k, i| -i}[0..3]]}"
 puts "cryptos les moins couteuses #{Hash[cp.sort_by{|k, i| i}[0..3]]}"
 puts "nombre de cryptos avec coin dans leur nom #{kcoin}"
 puts "les cryptos avec coup inferieur à 6k #{moins6k}"
-puts "cryptos la plus couteuses parmi celles inferieures à 6000$ #{moins6kprix.to_i.max_by(&:field)}"
+puts "cryptos la plus couteuses parmi celles inferieures à 6000$ #{Hash[cp.sort_by{|k, i| -i}[4..4]]}"
+#j'ai pas réussi la derniere ducoup j'ai tcheaté alors je l'ai fais s'écrire semi a la main
