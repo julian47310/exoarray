@@ -10,6 +10,9 @@ for i in (0..journalistes.length)
  if (/aude/.match("#{journalistes[i]}"))
   nbjournalistesaude += 1
  end
+ if (/Aude/.match("#{journalistes[i]}"))
+  nbjournalistesaude += 1
+ end
  if (/[0-9]/.match("#{journalistes[i]}"))
   nbjournalistesavecnuméro += 1
  end
