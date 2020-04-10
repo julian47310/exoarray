@@ -14,6 +14,11 @@ for i in (0..k.length)
   end
 end
 for i in (0..k.length)
+ if (/Coin/.match("#{k[i]}"))
+  kcoin += 1
+  end
+end
+for i in (0..k.length)
  if (v[i].to_i <= 6000)
   moins6k += ["#{k[i]}"]
  end
